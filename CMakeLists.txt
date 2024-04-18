@@ -36,6 +36,7 @@ find_package(Eigen3 REQUIRED)
 
 find_package(OpenMP REQUIRED)
 
+
 include_directories(
   include
   ${EIGEN3_INCLUDE_DIR}
@@ -47,6 +48,7 @@ include_directories(
   "/opt/ros/humble/include/tf2_geometry_msgs/"
   "/opt/ros/humble/include/tf2_eigen/tf2_eigen/"
   "/opt/ros/humble/include/nav_msgs/"
+  "/opt/ros/humble/include/visualization_msgs/"
 )
 
 link_directories(
@@ -79,7 +81,7 @@ if(BUILD_TESTING)
 endif()
 
 add_executable(cloudAligner src/cloudAligner/cloudAligner.cpp)
-ament_target_dependencies(cloudAligner rclcpp geometry_msgs sensor_msgs nav_msgs pcl_conversions tf2_ros)
+ament_target_dependencies(cloudAligner rclcpp geometry_msgs sensor_msgs nav_msgs pcl_conversions tf2_ros visualization_msgs)
 target_link_libraries(cloudAligner ${PCL_LIBRARIES})
 
 install(TARGETS

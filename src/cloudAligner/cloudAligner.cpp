@@ -203,7 +203,8 @@ CloudAligner::CloudAligner() : Node("pclsub")
     publisher_PointcloudMap_    = this->create_publisher<sensor_msgs::msg::PointCloud2>("/map_pointcloud", 10);
     publisher_PointcloudMapAlign_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/map_aligned_pointcloud", 10);
     publisher_PointcloudMapAlignSum_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/sum_aligned_pointcloud", 10);
-   
+    publisher_PoseVis_  = this->create_publisher<visualization_msgs::msg::Marker>("pose_track", 10);
+
     timer_ = create_wall_timer(100ms, publish_AlignMap);
 
     // Initialize the transform broadcaster
@@ -232,7 +233,32 @@ CloudAligner::CloudAligner() : Node("pclsub")
 
     std::cout << "--- pcl::GICP ---" << std::endl;
     boost::shared_ptr<pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ>> gicp(new pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ>());
-    ptr_gicp_ = gicp;    
+    ptr_gicp_ = gicp;   
+
+    //-- visualization on rviz
+    poseVis_.id = 0;
+    poseVis_.type = visualization_msgs::msg::Marker::SPHERE_LIST;
+    poseVis_.scale.x = poseVis_.scale.y = 0.6;
+    poseVis_.color.r = 0.85f;
+    poseVis_.color.g = 0.0f;
+    poseVis_.color.b = 0.85f;
+    poseVis_.color.a = 1.0; 
+    poseVis_.points.clear();
+
+    poseVis_.header.stamp = this->now();
+
+    poseVis_.pose.position.x = 0;
+    poseVis_.pose.position.y = 0;
+    poseVis_.pose.position.z = 0;
+
+    poseVis_.pose.orientation.x = 0;
+    poseVis_.pose.orientation.y = 0;
+    poseVis_.pose.orientation.z = 0;
+    poseVis_.pose.orientation.w = 0;
+    
+    poseVis_.header.frame_id ="base_link";
+    poseVis_.action = visualization_msgs::msg::Marker::ADD;
+
 }
 
 void CloudAligner::load_pointcloud(const std::string &file_name){
@@ -357,7 +383,6 @@ void CloudAligner::convertTransformEigenToROS()
     double dd = sqrt(dx_*dx_ + dy_*dy_ + dz_*dz_);
     
     Yawpose_    += -yaw;
-    
     Pitchpose_  = -pitch;
     Rollpose_   = -roll;
     
@@ -419,6 +444,15 @@ void CloudAligner::lidar_callback(const sensor_msgs::msg::PointCloud2::SharedPtr
         fprintf(f_pose_,"%d %lf %lf %lf %lf %lf %lf %lf\n",
             n++,Xpose_,Ypose_, Zpose_,Yawpose_*180/M_PI,Pitchpose_*180/M_PI,Rollpose_*180/M_PI,align_fitnessScore_);  
 
+        if(n == 0 || (n > 20 && n %20 == 0)){
+            geometry_msgs::msg::Point point_geometry;
+            point_geometry.x = -Xpose_;
+            point_geometry.y = -Ypose_;
+            point_geometry.z = Zpose_;
+
+            poseVis_.header.stamp = this->now();
+            poseVis_.points.push_back(point_geometry);
+        }
         Eigen::Affine3f transformatoin = pcl::getTransformation(Xpose_, Ypose_, Zpose_, Rollpose_, Pitchpose_, Yawpose_);
 	    pcl::transformPointCloud(*aligned, PointcloudAlign_pcl_, transformatoin);
 
@@ -456,12 +490,21 @@ void CloudAligner::lidar_callback(const sensor_msgs::msg::PointCloud2::SharedPtr
                         n_submap++;
                         vec_tmp_pc_set_.clear();
                     }
+
+                    // geometry_msgs::msg::Point point_geometry;
+                    // point_geometry.x = Xpose_;
+                    // point_geometry.y = Ypose_;
+                    // point_geometry.z = Zpose_;
+
+                    // poseVis_.header.stamp = this->now();
+                    // poseVis_.points.push_back(point_geometry);
                 }
             }
 
             pcl::toROSMsg(PointcloudAlign_pcl_, PointcloudAlign_ros_); 
             publisher_AlignPointcloud_ ->publish(std::move(PointcloudAlign_ros_));
-
+            publisher_PoseVis_->publish(std::move(poseVis_));
+            
             broadcastTF();
         }
     count_RosbagPlay_ = 0;
