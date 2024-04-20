@@ -27,7 +27,7 @@ Modify yaml to fit your environment.
 |ros__parameters|Default Value|Note|
 | ------------- | ------------- |---|
 |use_sim_time  |true  |---|
-|input_pointcloud  | "/velodyne_points"   |Topic of source point cloud|
+|input_pointcloud  | "/velodyne_points"   |Topic "PointCloud2" of source point cloud|
 |input_odom| "/odom_raw"|Odometry topic. No use at the current version|
 |threshold_align_fitness_score|1.0|It affects accuracy of measuring track based on LIDAR.In case track is far from real, set smaller value to improve it.|
 |save_pcd_dir|"SET_YOUR_DATA_DIRECTORY"|Directory to store map_materials, submaps, and point cloud as outcome.|  
