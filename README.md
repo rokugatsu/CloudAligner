@@ -17,10 +17,10 @@ At the current point loop closing is not in the scope.
 ## How to use
 ### Download from github and build
 ```
-cd YOUR_WORK_SPACE
-git clone https://github.com/rokugatsu/pcl_lab.git
-colcon build --symlink-install --packages-up-to pcl_lab
-source ./install/setup.bash 
+$ cd YOUR_WORK_SPACE
+$ git clone https://github.com/rokugatsu/pcl_lab.git
+$ colcon build --symlink-install --packages-up-to pcl_lab
+$ source ./install/setup.bash 
 ```
 ### Set up
 Modify yaml to fit your environment.
