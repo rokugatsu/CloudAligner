@@ -10,8 +10,5 @@ It generates point cloud map by combining several sub-point cloud maps.
 
 [CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15047867/CloudAlignOnepage.pdf)
 
-
-
-
-## run
+## How to use
 
