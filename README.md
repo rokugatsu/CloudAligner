@@ -13,7 +13,15 @@ It creates a point cloud map by combining several sub-point cloud maps.
 ## How to use
 ### Download from github and build
 ```
+cd YOUR_WORK_SPACE
 git clone https://github.com/rokugatsu/pcl_lab.git
 colcon build --symlink-install --packages-up-to pcl_lab
+```
+### Set up
+Modify yaml to fit your environment
+
+### Run
+```
+ros2 launch pcl_lab cloudAligner.launch.xml 
 ```
 
