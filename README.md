@@ -8,9 +8,8 @@ It generates point cloud map by combining several sub-point cloud maps.
 
 ![CloudAlignOnepage](https://github.com/rokugatsu/pcl_lab/assets/120123933/a4fe6168-3c2c-4cf6-9c82-3df3813ed613)
 
+[CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15047867/CloudAlignOnepage.pdf)
 
-
-[CloudAlign.pdf](https://github.com/rokugatsu/pcl_lab/files/15047831/CloudAlign.pdf)
 
 
 
