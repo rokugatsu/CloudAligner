@@ -1,7 +1,7 @@
 "pcl_lab" is a utility exploiting PCL, created by rokugatsu as a product of his study. It consists of several funtions.
 It has been sured run on the ROS2 humble on ubuntu 22.04.
 
-# cloudAligner
+# CloudAligner
 It is a point cloud map creation tool allow user check the process and modify it by manual in case misalignment happened or required partial update.
 
 ##### Point cloud map: Tsukuba Center, Tsukuba Ibaraki pref. Japan
