@@ -6,12 +6,9 @@ It is a point cloud map creation tool allow user check the process and modify it
 
 ![image](https://github.com/rokugatsu/pcl_lab/assets/120123933/73afaace-516a-4c40-9897-8eaa0c86d2a8)
 ## Overview
-It generates point cloud map by combining several sub-point cloud maps.   
-![CloudAlignOnepage (1)](https://github.com/rokugatsu/pcl_lab/assets/120123933/91cd7468-b9a4-453e-829d-11dcc117dd3f)
-
-
-
-[CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15047867/CloudAlignOnepage.pdf)
+It creates a point cloud map by combining several sub-point cloud maps.   
+![CloudAlignOnepage](https://github.com/rokugatsu/pcl_lab/assets/120123933/724d24b3-695f-466b-bdf8-cf03192319d4)
+[CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15048997/CloudAlignOnepage.pdf)
 
 ## How to use
 
