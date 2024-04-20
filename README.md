@@ -16,6 +16,7 @@ It creates a point cloud map by combining several sub-point cloud maps.
 cd YOUR_WORK_SPACE
 git clone https://github.com/rokugatsu/pcl_lab.git
 colcon build --symlink-install --packages-up-to pcl_lab
+source ./install/setup.bash 
 ```
 ### Set up
 Modify yaml to fit your environment.
@@ -34,6 +35,9 @@ Modify yaml to fit your environment.
 |leaf_size|0.5|Voxel size of source point cloud.|
 ### Run
 ```
-ros2 launch pcl_lab cloudAligner.launch.xml 
+ros2 launch pcl_lab cloudAligner.launch.xml
 ```
-
+In another terminal, replay bag file contains point cloud
+```
+ros2 bag play -r 1 2023-12-02-13-42-22
+```
