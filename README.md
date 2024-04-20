@@ -44,6 +44,7 @@ In another terminal, replay bag file contains point cloud
 ros2 bag play -r 1 YOUR_BAG_FILE
 ```
 #### Check the track if not far from the real 
+The track affects all of the process. In case far from the real, modify the value of yaml file, then try again.
 <img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/39e364c8-29b9-45ce-8fff-c058085c4a7b" width="640">
 
 
