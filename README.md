@@ -24,10 +24,10 @@ edit pcl_lab/config/pcl_lab.param.yaml.
 /**:
   ros__parameters:
     use_sim_time: true
-    input_pointcloud: "/velodyne_points" # topic of source point cloud
-    input_odom: "/odom_raw" # no use
-    threshold_align_fitness_score: 1.0 #It affects accuracy of measuring track based on LIDAR.In case track is far from real, set smaller value to improve it.
-    save_pcd_dir: "SET_YOUR_DATA_DIRECTORY/map_material/" #Directory to store map_materials, submaps, and Point cloud as outcome. 
+    input_pointcloud:"/velodyne_points"       # topic of source point cloud
+    input_odom: "/odom_raw"                  # no use at the current version
+    threshold_align_fitness_score: 1.0       #It affects accuracy of measuring track based on LIDAR.In case track is far from real, set smaller value to improve it.
+    save_pcd_dir: "SET_YOUR_DATA_DIRECTORY/map_material/" #Directory to store map_materials, submaps, and Point cloud as outcome.  
     threshold_dist_save_pcd: 10.0 #Interval distance to save source point cloud as map_material_xx_yyyy.pcd.
     Submap_Range: 60.0 #Interval distance to create submap_nn.pcd as submap_xx.pcd.
     SumAlign_fitnessScore: 500.0 #It affects accuracy of configuring submap. In case misalignment occured, set smaller value.
