@@ -39,5 +39,5 @@ ros2 launch pcl_lab cloudAligner.launch.xml
 ```
 In another terminal, replay bag file contains point cloud
 ```
-ros2 bag play -r 1 2023-12-02-13-42-22
+ros2 bag play -r 1 YOUR_BAG_FILE
 ```
