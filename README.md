@@ -47,4 +47,8 @@ ros2 bag play -r 1 YOUR_BAG_FILE
 The track affects all of the process. In case far from the real, modify the value of yaml file, then try again.
 <img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/39e364c8-29b9-45ce-8fff-c058085c4a7b" width="640">
 
+#### Point cloud map creation starts just after bag file replay finished or suspended.  
+Eventually, Pointcloud map has appeared.
+
+<img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/1ede48eb-fe53-445a-aeef-fec075d852f2" width="640">
 
