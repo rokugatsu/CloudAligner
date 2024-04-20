@@ -43,11 +43,11 @@ In another terminal, replay bag file contains pointcloud2.
 ```
 ros2 bag play -r 1 YOUR_BAG_FILE
 ```
-#### 1. Check the track if not far from the real 
+#### Check the track if not far from the real 
 The track affects all of the process. In case far from the real, modify the value of yaml file, then try again.
 <img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/39e364c8-29b9-45ce-8fff-c058085c4a7b" width="640">
 
-#### 2. Point cloud map creation starts just after bag file replay finished or suspended.  
+#### Point cloud map creation starts just after bag file replay finished or suspended.  
 Eventually, Pointcloud map has appeared. You can also find bi-products of this process including map-materials, submaps and partial point cloud maps. 
 Please exploit them to your debug.
 
