@@ -18,7 +18,7 @@ At the current point loop closing is not in the scope.
 ### Download from github and build
 ```
 $ cd YOUR_WORK_SPACE
-$ git clone https://github.com/rokugatsu/pcl_lab.git
+$ git clone https://github.com/rokugatsu/CloudAligner.git
 $ colcon build --symlink-install --packages-up-to pcl_lab
 $ source ./install/setup.bash 
 ```
