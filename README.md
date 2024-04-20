@@ -8,7 +8,9 @@ Point cloud map: Tsukuba Center, Tsukuba Ibaraki pref. Japan
 <img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/73afaace-516a-4c40-9897-8eaa0c86d2a8" width="640">
 
 ## Overview
-It creates a point cloud map by combining several sub-point cloud maps.  
+It creates a point cloud map by combining several sub-point cloud maps, in order to reduce the distortion or mis alignment as much as possible. 
+At the current point loop closing is not in the scope.
+
 <img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/5aea3845-3f80-47cb-b43c-e94f5067d261" width="640">
 [CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15049263/CloudAlignOnepage.pdf)
 
