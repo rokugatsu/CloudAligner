@@ -39,7 +39,7 @@ Modify yaml to fit your environment.
 ```
 ros2 launch pcl_lab cloudAligner.launch.xml
 ```
-In another terminal, replay bag file contains point cloud
+In another terminal, replay bag file contains pointcloud2. 
 ```
 ros2 bag play -r 1 YOUR_BAG_FILE
 ```
