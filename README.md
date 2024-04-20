@@ -9,6 +9,10 @@ It is a point cloud map creation tool allow user check the process and modify it
 ## Overview
 It creates a point cloud map by combining several sub-point cloud maps.  
 ![CloudAlignOnepage](https://github.com/rokugatsu/pcl_lab/assets/120123933/3652a9b3-1c84-429c-bdb0-71250da7d3b5)
+
+<img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/3652a9b3-1c84-429c-bdb0-71250da7d3b5" width="640">
+
+
 [CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15048997/CloudAlignOnepage.pdf)
 
 ## How to use
