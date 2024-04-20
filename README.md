@@ -11,8 +11,9 @@ It creates a point cloud map by combining several sub-point cloud maps.
 [CloudAlignOnepage.pdf](https://github.com/rokugatsu/pcl_lab/files/15048997/CloudAlignOnepage.pdf)
 
 ## How to use
-### Download from github
+### Download from github and build
 ```
-https://github.com/rokugatsu/pcl_lab.git
+git clone https://github.com/rokugatsu/pcl_lab.git
+colcon build --symlink-install --packages-up-to pcl_lab
 ```
 
