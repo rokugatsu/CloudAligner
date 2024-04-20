@@ -4,7 +4,7 @@ It has been sured run on the ROS2 humble on ubuntu 22.04.
 # cloudAligner
 It is a point cloud map creation tool allow user check the process and modify it by manual in case misalignment happened or required partial update.
 
-##### Tsukuba Center, Ibaraki Japan
+##### Point cloud map: Tsukuba Center, Ibaraki Japan
 <img src="https://github.com/rokugatsu/pcl_lab/assets/120123933/73afaace-516a-4c40-9897-8eaa0c86d2a8" width="640">
 
 ## Overview
