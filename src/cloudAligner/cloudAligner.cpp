@@ -36,7 +36,7 @@ CloudAligner::CloudAligner() : Node("pclsub")
 
         if(PointcloudMapAlignSum_pcl_.size () > 0 ){
             pcl::toROSMsg(PointcloudMapAlignSum_pcl_, PointcloudMapAlignSum_ros_); 
-            PointcloudMapAlignSum_ros_.header.frame_id = "base_link";
+            PointcloudMapAlignSum_ros_.header.frame_id = "base_link";       
             publisher_PointcloudMapAlignSum_->publish(std::move(PointcloudMapAlignSum_ros_));
         }
         
@@ -146,13 +146,13 @@ CloudAligner::CloudAligner() : Node("pclsub")
                 vec_submapA_[i].pitch,
                 vec_submapA_[i].roll);         
             
-            sprintf(strc_pcd,"PointcoudMap_%3.3d.pcd",i);
+            sprintf(strc_pcd,"PointcloudMap_%3.3d.pcd",i);
             std::string str_pointcloudMap_path = str_save_pcd_dir_;
             str_pointcloudMap_path += strc_pcd;
             pcl::io::savePCDFileBinary(str_pointcloudMap_path.c_str(),PointcloudMapAlignSum_pcl_);
         }                
             
-        sprintf(strc_pcd,"PointcoudMap.pcd");
+        sprintf(strc_pcd,"PointcloudMap.pcd");
         std::string str_pointcloudMap_path = str_save_pcd_dir_;
         str_pointcloudMap_path += strc_pcd;
 
@@ -238,10 +238,10 @@ CloudAligner::CloudAligner() : Node("pclsub")
     //-- visualization on rviz
     poseVis_.id = 0;
     poseVis_.type = visualization_msgs::msg::Marker::SPHERE_LIST;
-    poseVis_.scale.x = poseVis_.scale.y = 0.6;
+    poseVis_.scale.x = poseVis_.scale.y = 0.8;
     poseVis_.color.r = 0.85f;
-    poseVis_.color.g = 0.0f;
-    poseVis_.color.b = 0.85f;
+    poseVis_.color.g = 0.85f;
+    poseVis_.color.b = 0.0f;
     poseVis_.color.a = 1.0; 
     poseVis_.points.clear();
 
